@@ -1,16 +1,16 @@
-import {extractRawCSVData, domains, refineDataForCharting} from "./d3DataRetrieving.js"
+import {data} from "./d3DataRetrieving.js"
 import {Bar} from "./bar.js"
 import {draw} from "./draw.js"
 import {Options} from "./options.js"
 
 
-let data = await extractRawCSVData("/datafiles/GDP_Quarterly.csv");
-console.log(data)
+let rawData = await data.extractRawCSVData("/datafiles/GDP_Quarterly.csv");
+console.log(rawData)
 let bars = []
-export let theDomains = domains(data, Options.data.colourDecider)
+export let theDomains = rawData.domains(rawData, Options.data.colourDecider)
 console.log(theDomains)
 
-let refinedData = refineDataForCharting(data, Options.data.selectedFields);
+let refinedData = rawData.refineDataForCharting(rawData.data, Options.data.selectedFields);
 
 for(let i of refinedData)
     bars.push(new Bar(i));
