@@ -5,7 +5,7 @@ import { createEnum } from "./axis.js"
 export let Options = {
     data: {
         fileName: "/datafiles/GDP_Quarterly.csv",
-        selectedFields: createEnum(["Country", "GDP", "Quarter"]),
+        selectedFields: ["Country", "GDP", "Quarter"],
         colourDecider: "Country",
         //height decider
         QuantitativeValue: "GDP",
