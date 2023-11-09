@@ -1,7 +1,11 @@
 //configurable options object, for 
+import { createEnum } from "./axis.js" 
+
+
 export let Options = {
     data: {
-        selectedFields: ["Country", "GDP", "Quarter"],
+        fileName: "/datafiles/GDP_Quarterly.csv",
+        selectedFields: createEnum(["Country", "GDP", "Quarter"]),
         colourDecider: "Country",
         //height decider
         QuantitativeValue: "GDP",

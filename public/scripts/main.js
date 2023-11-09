@@ -4,7 +4,7 @@ import {draw} from "./draw.js"
 import {Options} from "./options.js"
 
 
-let rawData = await data.extractRawCSVData("/datafiles/GDP_Quarterly.csv");
+let rawData = await data.extractRawCSVData(Options.data.fileName);
 console.log(rawData)
 let bars = []
 export let theDomains = rawData.domains(rawData, Options.data.colourDecider)
