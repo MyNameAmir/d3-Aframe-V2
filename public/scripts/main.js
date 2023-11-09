@@ -1,13 +1,14 @@
-import {data} from "./d3DataRetrieving.js"
+import {Data} from "./d3DataRetrieving.js"
 import {Bar} from "./bar.js"
 import {draw} from "./draw.js"
 import {Options} from "./options.js"
 
 
-let rawData = await data.extractRawCSVData(Options.data.fileName);
+let rawData = await Data.extractRawCSVData(Options.data.fileName);
 console.log(rawData)
 let bars = []
-export let theDomains = rawData.domains(rawData, Options.data.colourDecider)
+export let theDomains = rawData.domains(rawData, Options.bar.colourDecider)
+//the domains is going to become the Model.numberOfValues(Axis.X)
 console.log(theDomains)
 
 let refinedData = rawData.refineDataForCharting(rawData.data, Options.data.selectedFields);

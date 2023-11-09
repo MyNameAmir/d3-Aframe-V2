@@ -11,7 +11,7 @@ export class Bar {
         this.data = data;
         //TODO: move the line below to process in the data retrieving, data processing is there, move this there, DONE
         this.height = this.getHeight(data[Object.keys(data)[Object.keys(data).indexOf(Options.data.QuantitativeValue)]]);
-        this.color = this.getColor(data[Object.keys(data)[Object.keys(data).indexOf(Options.data.colourDecider)]]);
+        this.color = this.getColor(data[Object.keys(data)[Object.keys(data).indexOf(Options.bar.colourDecider)]]);
         this.location = new Location(0, this.height, 0);
     }
 

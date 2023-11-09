@@ -41,4 +41,20 @@ export class RawData{
     
           return refinedData;
     }
+
+
+
+
+
+    ///added these to make it work this way
+
+    domains(data, value){
+        let uniqueData = [];
+    
+        for(let i in data){
+            uniqueData[i] = data[i][value];
+        }
+        return uniqueData;
+    }
+
 }

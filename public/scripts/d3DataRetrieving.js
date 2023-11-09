@@ -3,10 +3,12 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 
 //************/
-//TODO: make an class to make dataretrieving and add the functions into it 
+//TODO: make n class to make dataretrieving and add the functions into it 
 //************/
 
-export class data{
+export class Data{
+
+  //can we not just change this constructor function to have the await thing removed from it?
     constructor (data){
         this.data = data;
     }
@@ -16,7 +18,7 @@ export class data{
         //make this into the class
         let x = await d3.csv(file, function (d) { return d });
         x = refine(x);
-        return new data(x);
+        return new Data(x);
     }
 
 

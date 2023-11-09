@@ -1,17 +1,24 @@
 //configurable options object, for 
-import { createEnum } from "./axis.js" 
+import { Axis } from "./axis.js" 
 
 
 export let Options = {
     data: {
         fileName: "/datafiles/GDP_Quarterly.csv",
-        selectedFields: ["Country", "GDP", "Quarter"],
-        colourDecider: "Country",
+        selectedFields: ["Country", "GDP", "Quarter", "year"],
+        
         //height decider
         QuantitativeValue: "GDP",
         selectedAttribute: "year",
-        selectedAttributeValue: ["2014"]
+        selectedAttributeValue: ["2014"],
        //maybe it is the height decider
+             //********TODO */
+        //investigate this
+
+        //selectedKeys[0].axis
+        AxisToFieldConnector: [{axis: Axis.X, field: "Quarter"}, {axis: Axis.Y, field: "GDP"}, {axis: Axis.Z, field: "Country"}]
+        //selectedKeys: {Axis.X: "Quarter", Axis.Y: "GDP", Axis.Z: "Country"}
+        //to use the following you would say selectedKeys.Axis.X -> "Quarter"
     },
     //maximum scaling number for the height
 
@@ -23,10 +30,12 @@ export let Options = {
     },
 
     chart:{
-        selectedKeys: [{axis: "x", field: "Quarter"}, {axis: "y", field: "GDP"}, {axis: "z", field: "Country"}]
+  
     },
-
+    
+    
     bar: {
+        colourDecider: "Country",
         maxScale: 200000,
         minScale: 0,
         depth: 2.5,
